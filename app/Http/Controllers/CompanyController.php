@@ -31,6 +31,11 @@ class CompanyController extends Controller
         return redirect()->route('companies.index')->with('success', 'Company has been created successfully.');
     }
 
+    public function edit(Company $company)
+    {
+        return view('companies.edit',compact('company'));
+    }
+
     public function update(Request $request, Company $company)
     {
         $request->validate([
